@@ -1,0 +1,28 @@
+<div class="container">
+    <p>registration works! with Reactive form</p>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" formControlName="name" />
+        <div class="text-danger" *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+          Name should be greater than 3 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="text" class="form-control" formControlName="password" />
+        <div class="text-danger" *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+          Password should be greater than 6 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmpassword">Confirm Password:</label>
+        <input type="text" class="form-control" formControlName="confirmpassword" />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Register</button>
+    </form>
+  </div>

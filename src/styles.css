@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.fixed-footer{
+    bottom: 0;
+    background-color: #ABBAEA;
+}
+.active {
+    background-color: #04aa6d;
+  }

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"
+          routerLink="/home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a  class="nav-link" routerLink="/restaurantlist" routerLinkActive="active" *ngIf="isLoggedIn">Restaurant List</a>
+      </li>
+      <li>
+        <a  class="nav-link" routerLink="/Cart" *ngIf="isLoggedIn">Cart</a>
+      </li>
+      <li>
+        <a  class="nav-link" routerLink="/about" >About</a>
+      </li>
+  
+      <li>
+        <a  class="nav-link" routerLink="/post">Blogs</a>
+      </li>
+
+    </ul>
+</div>
+  </nav>
+  
