@@ -13,20 +13,20 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {  }
   onSubmit(loginForm: NgForm) {
-   console.log(loginForm.value.email);
+   //console.log(loginForm.value.email);
 
    this.authService
       .login(loginForm.value.email!, loginForm.value.password!)
       .subscribe({
         next: (res) => {
-          console.log(res);
+          console.log("@res",res);
           //localStorage.setItem('authToken', res.token);
           this.router.navigateByUrl('/home');
           ///this.router.navigate(['about'])
         },
         error: (e) => {
-          console.log(e);
-          this.errorMessage = e.error.errors;
+          console.log("@error occured ",e);
+          this.errorMessage = e.error;
         },
         complete: () => {
           console.log('complete');

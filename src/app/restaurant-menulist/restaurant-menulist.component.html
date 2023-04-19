@@ -1,0 +1,27 @@
+<div class="container-fluid bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 col-lg-5">
+          <h6 class="text-muted">List Group with Images</h6> 
+          <ul class="list-group">
+            <div *ngFor="let l of list">
+              <li class="list-group-item d-flex justify-content-between align-items-center restaurant-item">
+                <div class="d-flex flex-column">
+                  <div class="h5 mb-1">{{l.cusine}}</div>
+                  <div class="text-muted">{{l.name}}</div>
+                  <div class="text-muted">{{l.desc}}</div>
+                </div>
+                <div class="text-primary h4 font-weight-bold price">{{l.price| currency:'CAD'}}</div>
+                <!-- <div class="text-secondary">{{l.menu_id}}</div> -->
+  
+                <a routerLink="/restaurantMenulist/{{l.restaurant_id}}">
+                    
+                  <button type="button" class="btn btn-warning order-button" (click)="addToCart(l.menu_id,l.name,l.price)">Add to Cart</button>
+                </a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

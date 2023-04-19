@@ -7,10 +7,15 @@ import { RestaurantService } from '../service/restaurant.service';
   styleUrls: ['./restaurantlist.component.css']
 })
 export class RestaurantlistComponent implements OnInit {
+  list: any[] = [];
+  imagebasePath = 'assets/';
+  imageextension = '.png';
   constructor(private restaurantService: RestaurantService) {}
   ngOnInit(): void {
     this.restaurantService.fetchRestaurantList().subscribe((data)=>{
       console.log(data)
+      this.list=data;
+
     }
 
     )

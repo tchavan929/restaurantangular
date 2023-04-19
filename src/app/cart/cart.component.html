@@ -1,0 +1,13 @@
+<p>Total is {{getTotal()| currency:'CAD'}}</p>
+<p>Tax Payable is {{getTaxAmount()| currency:'CAD'}}</p>
+<p>Amount Payable is {{getTotalAmount()| currency:'CAD'}}</p>
+<div *ngFor="let c of cartlist">
+    
+      <p><button (click)="handleDelete(c.id)">X</button>{{ c.name }}</p>
+      <p [style]="{ color: c.quantity > 0 ? 'green' : 'red' }">
+        <button (click)="handleQuantityChange(c.id, 1)">+</button
+        >{{ c.quantity
+        }}<button (click)="handleQuantityChange(c.id, -1)">-</button>
+      </p>
+    
+  </div>

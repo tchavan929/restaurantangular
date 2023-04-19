@@ -12,6 +12,9 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { RestaurantlistComponent } from './restaurantlist/restaurantlist.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { RestaurantMenulistComponent } from './restaurant-menulist/restaurant-menulist.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavComponent,
     FooterComponent,
-    RestaurantlistComponent
+    RestaurantlistComponent,
+    AboutComponent,
+    RestaurantMenulistComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -12,4 +12,10 @@ export class RestaurantService {
     return this.http.get<any[]>(this.url)
 
   }
+  MenuListurl: string = 'http://localhost:4000/fetchRestaurantMenu/';
+  fetchRestaurantMenuList(id):Observable<any>{
+    return this.http.get<any[]>(this.MenuListurl+id)
+
+  }
+  
 }
